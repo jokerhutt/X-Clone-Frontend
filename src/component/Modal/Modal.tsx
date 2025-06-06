@@ -1,5 +1,6 @@
-import type { ReactNode} from "react";
+import { useState, type ReactNode} from "react";
 import type { ModalType } from "../../types/ModalType";
+import { useModal } from "../../context/misc/ModalProvider";
 
 
 type ModalProps = {
@@ -8,12 +9,18 @@ type ModalProps = {
   };
   
   function Modal({ children, setToggle }: ModalProps) {
+    const {modalData, setModalData} = useModal();
 
     return (
         <div 
         className="w-full z-10 h-full top-0 pt-16 px-4 fixed backdrop-blur-sm
         flex justify-center items-start"
-        onClick={() => setToggle(null)} 
+        onClick={() => {
+            if (modalData) {
+                setModalData(null);
+            }
+            setToggle(null)
+        }} 
          >
 
             <div 

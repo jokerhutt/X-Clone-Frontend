@@ -5,15 +5,18 @@ import type { ModalType } from "../../types/ModalType";
 type ModalContextType = {
   modalType: ModalType;
   setModalType: (type: ModalType) => void;
+  modalData: number | null;
+  setModalData: (data: number | null) => void;
 };
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [modalType, setModalType] = useState<ModalType>(null);
+  const [modalData, setModalData] = useState<number | null>(null);
 
   return (
-    <ModalContext.Provider value={{ modalType, setModalType }}>
+    <ModalContext.Provider value={{ modalType, setModalType, modalData, setModalData }}>
       {children}
     </ModalContext.Provider>
   );
