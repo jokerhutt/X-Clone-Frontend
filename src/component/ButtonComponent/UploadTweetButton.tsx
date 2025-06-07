@@ -3,13 +3,16 @@ import type { Post } from "../../types/Post";
 import { useCurrentUser } from "../../context/currentUser/CurrentUserProvider";
 import { useFeedContext } from "../../context/feed/FeedContext";
 import { usePostCache } from "../../context/cache/PostCacheProvider";
+import type { ModalType } from "../../types/ModalType";
 
 type UploadTweetButtonProps = {
     textInput: string;
     parentId?: number;
+    setToggle: (type: ModalType) => void;
+    setNewPost: (post: Post) => void;
 }
 
-function UploadTweetButton ({textInput, parentId} : UploadTweetButtonProps) {
+function UploadTweetButton ({textInput, parentId, setToggle, setNewPost} : UploadTweetButtonProps) {
 
     const {currentUser} = useCurrentUser();
     const {addToPostCache} = usePostCache();
@@ -21,8 +24,11 @@ function UploadTweetButton ({textInput, parentId} : UploadTweetButtonProps) {
             
             const newComposedPost : NewPost = {
                 userId: currentUser.id,
-                text: textInput
+                text: textInput,
+                parentId: parentId
             }
+
+            const isAComment : boolean = parentId != null;
 
             fetch("http://localhost:8080/api/posts/createPost", {
                 method: "POST",
@@ -34,6 +40,7 @@ function UploadTweetButton ({textInput, parentId} : UploadTweetButtonProps) {
                 addToPostCache(data);
                 addToCurrentUserPosts(data.id)
                 addToForYouFeedIds(data.id);
+                setToggle(null);
               });
 
         }

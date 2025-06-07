@@ -13,8 +13,8 @@ function ModalManager() {
     <Modal setToggle={setModalType}>
       {modalType === "signup" && <SignupView setToggle={setModalType}/>}
       {modalType === "login" && <LoginView setToggle={setModalType}/>} 
-      {modalType === "posting" && <ComposePost/>} 
-      {modalType === "replying" && modalData && <ComposePost parentId={modalData}/>}
+      {modalType === "posting" && <ComposePost setToggle={setModalType}/>} 
+      {modalType === "replying" && modalData && <ComposePost parentId={modalData.postId} setNewPost={modalData.setNewPost} setToggle={setModalType}/>}
     </Modal>
   );
 }

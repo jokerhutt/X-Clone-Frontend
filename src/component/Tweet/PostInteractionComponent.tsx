@@ -85,7 +85,7 @@ function PostInteractionComponent ({postId, likeList, bookmarkList, setNewPost} 
                     onClick={() => {
                         if (currentUser) {
                             setModalType("replying")
-                            setModalData(postId)
+                            setModalData({ postId, setNewPost })
                         }
                     }}/>
                 </InteractionButton>

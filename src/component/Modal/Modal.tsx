@@ -1,6 +1,7 @@
 import { useState, type ReactNode} from "react";
 import type { ModalType } from "../../types/ModalType";
 import { useModal } from "../../context/misc/ModalProvider";
+import type { Post } from "../../types/Post";
 
 
 type ModalProps = {

@@ -5,17 +5,18 @@ import { MdOutlineGif } from "react-icons/md";
 import UploadTweetButton from "../ButtonComponent/UploadTweetButton";
 import { useCurrentUser } from "../../context/currentUser/CurrentUserProvider";
 import { useEffect, useState } from "react";
-import type { NewPost } from "../../types/NewPost";
-import { usePostCache } from "../../context/cache/PostCacheProvider";
-import type { Post } from "../../types/Post";
-import PostTemplate from "../Tweet/PostTemplate";
 import ReplyTemplate from "../Tweet/ReplyTemplate";
+import type { ModalType } from "../../types/ModalType";
+import type { Post } from "../../types/Post";
 
 type ComposePostProps = {
     parentId?: number;
+    setToggle: (type: ModalType) => void;
+    setNewPost?: (post: Post) => void;
+
 }
 
-function ComposePost ({parentId}: ComposePostProps) {
+function ComposePost ({parentId, setToggle, setNewPost}: ComposePostProps) {
 
     const [textInput, setTextInput] = useState<string>("");
     const {currentUser} = useCurrentUser();
@@ -25,7 +26,7 @@ function ComposePost ({parentId}: ComposePostProps) {
         console.log("isPostChild " + parentId != null)
     }, [parentId])
 
-    if (parentId) {
+    if (parentId && setNewPost) {
         return (
             <div className="w-full h-fit flex flex-col gap-4 rounded-2xl px-4 py-3 bg-[var(--background-main)] border border-(--color-main)">
                 
@@ -49,7 +50,7 @@ function ComposePost ({parentId}: ComposePostProps) {
                                 <MdOutlineGif className="text-4xl"/>
                             </div>
                             <div className="w-full h-full justify-end flex items-center">
-                                <UploadTweetButton textInput = {textInput} parentId={parentId}/>
+                                <UploadTweetButton setNewPost={setNewPost} setToggle={setToggle} textInput = {textInput} parentId={parentId}/>
                             </div>
                         </div>
                     </div>
@@ -77,7 +78,7 @@ function ComposePost ({parentId}: ComposePostProps) {
                             <MdOutlineGif className="text-4xl"/>
                         </div>
                         <div className="w-full h-full justify-end flex items-center">
-                            <UploadTweetButton textInput = {textInput}/>
+                            <UploadTweetButton textInput={textInput} setToggle={setToggle}/>
                         </div>
                     </div>
                 </div>
