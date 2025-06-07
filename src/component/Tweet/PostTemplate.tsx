@@ -98,7 +98,7 @@ function PostTemplate ({postId} : PostTemplateProps) {
                             <CreatedAtDisplay createdAt={post.createdAt} typeOfCreatedAt="timeago"/>
                     </div>
                     <div className="text-white max-h-32">
-                        <p>
+                        <p onClick={() => navigate("/tweet/"+postId)}>
                         {post.text}
                         </p>
                     </div>
