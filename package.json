@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@qtpy/use-popup": "^0.1.40",
     "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "react": "19.1.0",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@qtpy/state-management-react": "^0.2.62",
     "@tailwindcss/postcss": "^4",
     "@tanstack/react-query": "^5.85.3",
     "@types/node": "^20",

@@ -1,7 +1,7 @@
-import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import clsx from "clsx";
-import JSX from "react";
+import { default as JSX, default as React } from "react";
+
 // TODO: Add more typography variants
 // TODO: SOURCE https://www.figma.com/design/HzbnAwkoFv9yEMoD0u75z6/xdotcom?node-id=4-37723&m=dev
 // TODO: ADD STATES
@@ -12,8 +12,11 @@ export const typographyVariants = cva("text-white", {
       sidebarButtonText: "text-[20px] leading-[24px] font-normal ",
       sidebarButtonTextActive: "text-[20px] leading-[24px] font-bold",
 
+      //
+
       postButtonMain: "text-[17px] leading-[20px] font-bold ",
       postButtonTop: "text-[15px] leading-[20px] font-bold ",
+      //
       suggestion: "text-[14px] leading-[16px] font-bold ",
       cardTitle: "text-[15px] leading-[20px] font-bold ",
       cardUserTag: "text-[15px] leading-[20px] font-normal ",

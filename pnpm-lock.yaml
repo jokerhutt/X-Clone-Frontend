@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@qtpy/use-popup':
+        specifier: ^0.1.40
+        version: 0.1.40
       lucide-react:
         specifier: ^0.539.0
         version: 0.539.0(react@19.1.0)
@@ -24,6 +27,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.3.1
+      '@qtpy/state-management-react':
+        specifier: ^0.2.62
+        version: 0.2.62
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.12
@@ -358,6 +364,15 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@qtpy/state-management-observable@0.6.66':
+    resolution: {integrity: sha512-Ckez1vajmO2Mh2hCKm6zgOo0H8vhklZ7QOSVc/ozHVc2U2G29iDJk1bSaJE3uPEQEeTSv/yWmd1z9KozRu0fKg==}
+
+  '@qtpy/state-management-react@0.2.62':
+    resolution: {integrity: sha512-fk83I1cz9pP+c+7MOZEOhrwkNzb1UntieGp2kRTcqEgIbOBjmhLpyiSpEzzYXQiJmyIHCMgSQawNcTZgQno3eA==}
+
+  '@qtpy/use-popup@0.1.40':
+    resolution: {integrity: sha512-8lU1+NF20laM50+iXxaPYi/7FjgLvIk3HPeJqs2j175c9+PYT6lC4QDz4804n2kc6qx/WjiotKeKDJLqZaJD8g==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -2149,6 +2164,18 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@qtpy/state-management-observable@0.6.66': {}
+
+  '@qtpy/state-management-react@0.2.62':
+    dependencies:
+      '@qtpy/state-management-observable': 0.6.66
+      react: 19.1.0
+
+  '@qtpy/use-popup@0.1.40':
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@rtsao/scc@1.1.0': {}
 
