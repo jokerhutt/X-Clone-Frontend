@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+* {
+  font-family: var(--font-chirp);
+}
+
+@theme {
+  --color-primary-blue: rgb(29, 155, 240);
+}
+
+@layer base {
+  body {
+    @apply text-[15px]
+           leading-[22.5px]
+           no-underline
+           whitespace-normal
+           break-words;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(62, 65, 68);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgb(22, 24, 28);
+  }
+}
