@@ -1,0 +1,30 @@
+{
+  "home": {
+    "forYou": "For You",
+    "following": "Following"
+  },
+  "explore": {
+    "forYou": "For You",
+    "trending": "Trending",
+    "news": "News",
+    "sports": "Sports",
+    "entertainment": "Entertainment"
+  },
+  "profile": {
+    "posts": "Posts",
+    "replies": "Replies",
+    "highlights": "Highlights",
+    "articles": "Articles",
+    "media": "Media",
+    "likes": "Likes"
+  },
+  "notifications": {
+    "all": "All",
+    "verified": "Verified",
+    "mentions": "Mentions"
+  },
+  "communities": {
+    "home": "Home",
+    "explore": "Explore"
+  }
+}
